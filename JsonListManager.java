@@ -236,11 +236,9 @@ public class JsonListManager extends JFrame {
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(url);
             Clip clip = AudioSystem.getClip();
             clip.open(audioInputStream);
-            System.out.println("Yeah");
             clip.start();
         } catch (IOException | UnsupportedAudioFileException | LineUnavailableException e) {
             e.printStackTrace();
-            System.out.println("danger");
         }
     }
     
@@ -253,7 +251,6 @@ public class JsonListManager extends JFrame {
                 Long H = getTimeHour();
                 Long M = getTimeMin();
                 if (H == hour && M == minute){
-                    System.out.println("Buck Yeah");
                     playSound();
                 }
             }
@@ -269,7 +266,7 @@ public class JsonListManager extends JFrame {
 
     private long getTimeMin() {
         long TimeMin = LocalDateTime.now().getMinute();
-        return (TimeMin + 1);
+        return (TimeMin);
     }
     
     public static void main(String[] args) {
